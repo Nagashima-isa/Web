@@ -2,7 +2,16 @@
 <html>
 <head>
 <style>
-body  {
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  gap: 20px;
+  
+.body {
   background-image: url("cinema.png")
   background-repeat: repeat;
   background-color: #cccccc;
@@ -12,16 +21,31 @@ body  {
   grid-template-areas:
   grid-template-columns: 1fr;
   height: 200px;
-  background-color: red; /* For browsers that do not support gradients */
+  background-color: red; 
   background-image: linear-gradient(to right, red , yellow);
 }
  .footer {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 20 px;
+  grid-column: col-start / span 12;
   height: 200px;
   background-color: red; /* For browsers that do not support gradients */
   background-image: linear-gradient(to right, red , yellow);           
+}
+  @media (min-width: 768px) {
+    
+  .content {
+    grid-column: col-start 3 / span 8;
+    grid-row: 2 / 4;
+  }
+  .sidebar {
+    grid-column: col-start 11 / span 2;
+  }
+  .ads {
+    grid-column: col-start 11 / span 2;
+  }
+  nav ul {
+    flex-direction: column;
+  }
 }
 }
 </style>
