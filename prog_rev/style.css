@@ -8,13 +8,20 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-template-columns: repeat(12, 1fr);
   gap: 20px;
   
 .body {
   background-image: url("cinema.png")
-  background-repeat: repeat;
-  background-color: #cccccc;
+  background-repeat: center repeat;
+  background-size: 200px;
+}
+.div1, .div3 {
+  grid-column: span 8;
+}
+
+.div2, .div4 {
+  grid-column: span 4;
 }
 .header {
   display: grid;
