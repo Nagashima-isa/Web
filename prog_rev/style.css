@@ -24,12 +24,19 @@
 imagem:hover {
      transform: scale(1.2);
 }
-.div1, .div3 {
+.imagem 2, .texto 2 {
   grid-column: span 8;
 }
 
-.div2, .div4 {
+.imagem 1, .texto 1{
   grid-column: span 4;
+}
+  .grid-container {
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 15px; /* 👈 bordas arredondadas */
 }
 .header {
   display: grid;
