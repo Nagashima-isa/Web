@@ -16,6 +16,14 @@
   background-repeat: center repeat;
   background-size: 200px;
 }
+ .imagem {
+ width: 300px;
+ transition: transform 0.3s ease;
+}
+
+imagem:hover {
+     transform: scale(1.2);
+}
 .div1, .div3 {
   grid-column: span 8;
 }
