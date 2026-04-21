@@ -10,10 +10,12 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 20px;
-  
+  margin: 0;
+  font-family: Arial, sans-serif;
+)
 .body {
   background-image: url("cinema.png")
-  background-repeat: center repeat;
+  background-repeat: repeat;
   background-size: 200px;
 }
  .imagem {
@@ -24,11 +26,11 @@
 imagem:hover {
      transform: scale(1.2);
 }
-.imagem 2, .texto 2 {
+.imagem-2, .texto-2 {
   grid-column: span 8;
 }
 
-.imagem 1, .texto 1{
+.imagem-1, .texto-1{
   grid-column: span 4;
 }
   .grid-container {
@@ -46,11 +48,9 @@ imagem:hover {
   background-image: linear-gradient(to right, red , yellow);
 }
  .footer {
-  display: grid;
-  grid-column: col-start / span 12;
+  grid-column: 1 / span 12;
   height: 200px;
-  background-color: red; /* For browsers that do not support gradients */
-  background-image: red ;           
+  background: blue;          
 }
   @media (min-width: 768px) {
     
