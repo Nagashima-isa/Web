@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="nome">
+    
+    <select id="cor">
+      <option>blue</option>
+      <option>yellow</option>
+      <option>red</option>
+    </select>
+    <button onclick="mostrar()">Ok</button>
+
+    <ul id="lista">
+        
+        
+    </ul>
+
+    <script>
+    
+
+    function mostrar() {
+        let valor = document.getElementById("nome").value;
+        let cor = document.getElementById("cor").value;
+        
+        let p = document.createElement("li");
+        p.innerHTML = "Nome: " + valor ;
+        p.style.color = cor;
+        
+        let ul = document.getElementById("lista");
+
+        ul.appendChild(p);
+    }
+    </script>
+
+
+</body>
+</html>
