@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Busca de Usuários</title>
+</head>
+<body>
+
+    <h2>Buscar Seus Programas Favoritos</h2>
+
+    <input type="text" id="busca" placeholder="Digite o nome da série que procura">
+    <button onclick="filtrar()">Buscar</button>
+    <a id="meuLink" href="#">Acessar Perfil</a>
+
+    <div id="resultado"></div>
+
+    <script>
+        let Programa = [];
+
+        async function carregarPrograma() {
+            const base = await fetch("https://api.tvmaze.com/search/shows?q=");
+            Programa = await base.json();
+            <a id="meuLink" href="#">Acessar Perfil</a>
+
+<script>
+  const baseUrl = "https://exemplo.com";
+  const idUsuario = 42;
+  const linkCompleto = `${baseUrl}${idUsuario}`;
+
+  // Atribuindo a URL concatenada ao elemento HTML
+  document.getElementById("meuLink").href = linkCompleto;
+</script>
+
+        }
+
+        function filtrar() {
+            const texto = document.querySelector("#busca").value.toLowerCase();
+
+            const filtrados = Programa.filter(serie =>
+                serie.name.toLowerCase().includes(texto)
+            );
+
+            mostrarNaTela(filtrados);
+        }
+
+        function mostrarNaTela(lista) {
+            const div = document.querySelector("#resultado");
+            div.innerHTML = "";
+
+            if (lista.length === 0) {
+                div.textContent = "Nenhum resultado encontrado";
+                return;
+            }
+
+            lista.forEach(serie => {
+                const p = document.createElement("p");
+                p.textContent = `${serie.name} - ${serie.Score} - ${serie.image}`;
+                div.appendChild(p);
+            });
+        }
+
+        carregarUsuarios();
+    </script>
+
+</body>
+</html>
