@@ -18,25 +18,26 @@
         let Programa = [];
 
         async function carregarPrograma() {
-            const base = await fetch("https://api.tvmaze.com/search/shows?q=");
+            const baseUrl = await fetch("https://api.tvmaze.com/search/shows?q=");
             Programa = await base.json();
             <a id="meuLink" href="#">Acessar Perfil</a>
 
 <script>
-  const baseUrl = "https://exemplo.com";
-  const idUsuario = 42;
-  const linkCompleto = `${baseUrl}${idUsuario}`;
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Recipient’s username" aria-label="Recipient’s username" aria-describedby="button-addon2">
+  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+</div>
+            
+  const baseUrl = "https://api.tvmaze.com/search/shows?q=";
+  const texto = document.querySelector("#busca").value.toLowerCase();
+  const linkCompleto = `${baseUrl}${texto}`;
 
   // Atribuindo a URL concatenada ao elemento HTML
   document.getElementById("meuLink").href = linkCompleto;
 </script>
 
-        }
-
         function filtrar() {
-            const texto = document.querySelector("#busca").value.toLowerCase();
-
-            const filtrados = Programa.filter(serie =>
+            const filtrados = linkCompleto.filter(serie =>
                 serie.name.toLowerCase().includes(texto)
             );
 
@@ -56,6 +57,15 @@
                 const p = document.createElement("p");
                 p.textContent = `${serie.name} - ${serie.Score} - ${serie.image}`;
                 div.appendChild(p);
+
+<div class="card text-bg-dark">
+  <img src="..." class="card-img">
+  <div class="card-img-overlay">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text"><small>Last updated 3 mins ago</small></p>
+  </div>
+</div>
             });
         }
 
