@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <style>
+    body {
+        background-color: cornflowerblue;
+    }
+  </style>
+  <body>
+    <h1>Olá, essa sua lista de tarefas!</h1>
+
+<div class="input-group">
+  <span class="input-group-text">Pegue sua caneta</span>
+  <textarea class="form-control" aria-label="With textarea"></textarea>
+</div>
+
+<select class="form-select" multiple aria-label="Multiple select example">
+  <option selected>Defina Urgência</option>
+  <option value="yellow">Baixo</option>
+  <option value="orange">Médio</option>
+  <option value="red">URGENTE</option>
+</select>
+<button onclick="mostrar()">Salvar</button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+      
+      function mostrar() {
+        
+        let valor = document.getElementById("Nome").value;
+        let cor = document.getElementById("cor").value;
+
+        let p = document.createElement("li");
+        p.innerHTML = "Prioridade: " + valor;
+        p.style.color = cor;
+        
+        let ul = document.getElementById("lista");
+        ul.appendChild(p);
+
+        document.getElementById("nome").value = "";
+    </script>
+  </body>
+</html>
